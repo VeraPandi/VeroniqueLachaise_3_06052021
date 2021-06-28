@@ -21,17 +21,20 @@
   <body>
     <!-- Header -->
     <header>
-      <img src="" alt="Logo de Ohmyfood" />
+      <div class="logo">
+        <img src="src/images/logo/ohmyfood.png" alt="Logo de Ohmyfood" />
+      </div>
       <div class="location">
-        <span class="fas fa-map-marker-alt"> Paris, Belleville </span>
+        <span class="fas fa-map-marker-alt"></span>
+        <span class="location__searchtext"> Paris, Belleville </span>
       </div>
 
-      <div class="homepage__title">
+      <div class="header__title">
         <h1>Réservez le menu qui vous convient</h1>
         <h2>
           Découvrez des restaurants d'exception, sélectionnés par nos soins.
         </h2>
-        <div class="explore__btn">
+        <div class="header__btn">
           <p>Explorer nos restaurants</p>
         </div>
       </div>
@@ -44,38 +47,45 @@
           <h2>Fonctionnement</h2>
         </div>
 
-        <section class="findRestaurant__btn">
-          <a href="#" data-count="1">
-            <span class="fas fa-mobile-alt"></span>
-            <h3>Choisissez un restaurant</h3>
-          </a>
-        </section>
+        <div class="operation-steps">
+          <section class="operation-steps__btn">
+            <a href="#" data-count="1">
+              <span class="fas fa-mobile-alt"></span>
+              <h3>Choisissez un restaurant</h3>
+            </a>
+          </section>
 
-        <section class="selectMenu__btn">
-          <a href="#" data-count="2">
-            <img src="src/images/icons/menu_icon.png" alt="" />
-            <h3>Composez votre menu</h3>
-          </a>
-        </section>
+          <section class="operation-steps__btn">
+            <a href="#" data-count="2">
+              <span class="fas fa-list-ul"></span>
+              <h3>Composez votre menu</h3>
+            </a>
+          </section>
 
-        <section class="eatIn__btn">
-          <a href="#" data-count="3">
-            <span class="fas fa-store"></span>
-            <h3>Dégustez au restaurant</h3>
-          </a>
-        </section>
+          <section class="operation-steps__btn">
+            <a href="#" data-count="3">
+              <span class="fas fa-store"></span>
+              <h3>Dégustez au restaurant</h3>
+            </a>
+          </section>
+        </div>
       </nav>
 
       <!-- Restaurant cards -->
-      <article>
-        <div class="restaurantsList__title">
+      <article class="restaurants">
+        <div class="restaurants__title">
           <h2>Restaurants</h2>
         </div>
-        <section class="card">
-          <a class="card__img" href="#">
-            <img src="#" alt="" />
-            <span>Nouveau</span>
-            <div class="card__title">
+        <section class="restaurant-card">
+          <a href="#">
+            <img src="src/images/restaurants/mobile_size/img.jpg" alt="" />
+            <!-- srcset="large.jpg 3200w, desktop.jpg 1600w, mobile.jpg 800w"
+              sizes="33,33vw"
+              src="src/images/restaurants/mobile_size/img.jpg"
+              alt=""
+            /> -->
+            <span class="restaurant-card__label">Nouveau</span>
+            <div class="restaurant-card__title">
               <h3>La palette du goût</h3>
               <h4>Ménilmontant</h4>
             </div>
@@ -83,11 +93,11 @@
           <span class="far fa-heart"></span>
         </section>
 
-        <section class="card">
-          <a class="card__img" href="#">
+        <section class="restaurant-card">
+          <a href="#">
             <img src="#" alt="" />
-            <span>Nouveau</span>
-            <div class="card__title">
+            <span class="restaurant-card__label">Nouveau</span>
+            <div class="restaurant-card__title">
               <h3>La note enchantée</h3>
               <h4>Charonne</h4>
             </div>
@@ -95,10 +105,10 @@
           <span class="far fa-heart"></span>
         </section>
 
-        <section class="card">
-          <a class="card__img" href="menu-alafrancaise.html">
+        <section class="restaurant-card">
+          <a href="menu-alafrancaise.html">
             <img src="#" alt="" />
-            <div class="card__title">
+            <div class="restaurant-card__title">
               <h3>&#xC0; la française</h3>
               <h4>Cité Rouge</h4>
             </div>
@@ -106,10 +116,10 @@
           <span class="far fa-heart"></span>
         </section>
 
-        <section class="card">
-          <a class="card__img" href="#">
+        <section class="restaurant-card">
+          <a href="#">
             <img src="#" alt="" />
-            <div class="card__title">
+            <div class="restaurant-card__title">
               <h3>Le délice des sens</h3>
               <h4>Folie-Méricourt</h4>
             </div>
