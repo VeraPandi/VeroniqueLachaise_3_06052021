@@ -85,3 +85,67 @@ header {
       padding: 0 13px;
    }
 }
+
+/***************************************/
+/******** Navigation ********/
+/***************************************/
+
+/**** Operation ****/
+.operation {
+   padding: 14px 20px 40px;
+}
+
+/**** Operation steps btn ****/
+.operation-steps__btn {
+   margin: 26px 0 26px 10px;
+   padding: 13px 0 10px;
+   border-radius: 23px;
+   background-color: #f6f6f6;
+   box-shadow: 0 6px 8px #e5e5e5, inset 0 1px 3px #fff;
+
+   &:last-child {
+      background-color: #f5edff;
+      box-shadow: 0 6px 8px #e5e5e5, inset 0 1px 3px #fff;
+   }
+
+   span {
+      margin: 0 27px 0 21px;
+      color: #7e7e7e;
+   }
+
+   h3 {
+      color: #000;
+      font-size: 16px;
+      font-weight: 500;
+   }
+
+   .fa-mobile-alt {
+      font-size: 21px;
+   }
+
+   .fa-list-ul {
+      font-size: 18px;
+      margin-right: 23px;
+   }
+
+   .fa-store {
+      margin-right: 20px;
+      color: #9356dc;
+   }
+}
+
+.operation-steps__btn a {
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+
+   &:before {
+      content: attr(data-count);
+      margin-left: -11px;
+      padding: 4px 8.5px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #9356dc;
+      border-radius: 100%;
+   }
+}
