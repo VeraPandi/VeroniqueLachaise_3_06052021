@@ -1,0 +1,243 @@
+/***************************************/
+/******** General styles ********/
+/***************************************/
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/***************************************/
+/******** Header ********/
+/***************************************/
+/**** Header ****/
+header {
+  padding: 22px 12px 8px;
+  text-align: center;
+}
+
+header .logo img {
+  width: 166px;
+}
+
+/**** Navigation ****/
+.menu-page__navigation {
+  position: relative;
+}
+
+.menu-page__navigation a {
+  position: absolute;
+  bottom: 17px;
+  left: 22px;
+  font-size: 20px;
+  color: #353535;
+}
+
+/***************************************/
+/******** Article ********/
+/***************************************/
+/**** Menu page ****/
+.menu-page {
+  position: relative;
+  margin-top: -50px;
+  padding: 20px 14px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+}
+
+.menu-page__img {
+  position: relative;
+}
+
+.menu-page__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 266px;
+  width: 100%;
+}
+
+.menu-page__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 6px 6px;
+  font-size: 18px;
+  font-family: "Shrikhand", sans-serif;
+}
+
+.menu-page__title h2 {
+  margin: 0;
+}
+
+.menu-page__title .fa-heart {
+  padding: 20px;
+  font-size: 22px;
+  -webkit-text-fill-color: #f6f6f6;
+  -webkit-text-stroke-width: 1.1px;
+  -webkit-text-stroke-color: black;
+}
+
+/**** Dish category ****/
+.dish-category {
+  padding: 14px 0;
+}
+
+.dish-category h3 {
+  margin: 0 6px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.dish-category h3:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 5px;
+  background-color: #99e2d0;
+}
+
+/**** Dish card ****/
+.dish-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px auto;
+  line-height: 1.5;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 8px 8px #e7e7e7;
+          box-shadow: 0 8px 8px #e7e7e7;
+  background-color: #fff;
+}
+
+.dish-card__title {
+  width: 100%;
+  padding: 9px 12px;
+}
+
+.dish-card__title h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dish-card__title h5 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.dish-card__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dish-card__btn .select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 20px 20px 0;
+  font-size: 20px;
+  background-color: #99e2d0;
+  color: #fff;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.dish-card__btn .select .fa-check-circle {
+  margin: auto 0;
+}
+
+.price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 10px 22px 10px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #353535;
+}
+
+/**** Order btn ****/
+.order {
+  padding-bottom: 43px;
+}
+
+.order .order__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 185px;
+  margin: 20px auto;
+  color: #fff;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 4px 8px #c6c6c6;
+          box-shadow: 0 4px 8px #c6c6c6;
+  background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+}
+
+.order .order__btn h3 {
+  margin: auto;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/***************************************/
+/******** Footer ********/
+/***************************************/
+.footer {
+  padding: 10px 25px 30px;
+  background-color: #353535;
+}
+
+.footer__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__link a {
+  padding: 4px 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer h2 {
+  margin: 0;
+  padding: 15px 0;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.footer span {
+  padding-right: 12px;
+  font-size: 13px;
+}
+
+.footer .fa-hands-helping {
+  font-size: 11px;
+}
+/*# sourceMappingURL=styles-menu.css.map */
