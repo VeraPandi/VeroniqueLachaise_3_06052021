@@ -1,6 +1,77 @@
-/***************************************/
-/******** General styles ********/
-/***************************************/
+// Organisation du code sass sur l'ensemble du site :
+// - Seulement ces éléments ont été imbriqués afin de garder une bonne lisibilité du code : icon / pseudo-classe / pseudo-élément / titres.
+// - Les commentaires flechés ne doivent pas être retirés. Ils servent à comprendre le rôle d'une règle scss.
+// Le fichier "main" utilise les règles "@use" à la place des règles "@import".
+// Le fichier "map" a été gardé afin de simplifier la maintenance du code. Il peut être retiré si vous jugez que sa présence ne vous est pas utile.
+
+/////////////////////////////////////////
+/* GLOBAL : Variables, mixins, fonctions */
+/////////////////////////////////////////
+
+// variables des couleurs
+$green: #99e2d0;
+$purple: #9356dc;
+$pink-purple: linear-gradient(
+   175deg,
+   rgb(255, 121, 218) 0%,
+   rgb(147, 86, 220) 100%
+);
+
+// Variables des apparences des éléments
+$background-shadow: 0 4px 8px #c6c6c6;
+
+// Forme btn rose
+@mixin formBtnPink {
+   display: flex;
+   height: 50px;
+   width: 216px;
+   margin: 5px auto;
+   color: #fff;
+   border-radius: 50px;
+}
+
+// Ombrage btn rose
+@mixin lightnessBtnPink {
+   box-shadow: 0 7px 12px #b3b3b3;
+   opacity: 0.75;
+}
+
+// Heart icône
+@mixin heartIcon {
+   cursor: pointer;
+   background-image: linear-gradient(3.46grad, #ff79da 0%, #9356dc 100%);
+   background-size: 100%;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   -webkit-text-stroke-width: inherit;
+   transition: all 400ms cubic-bezier(0.56, 0.26, 0.56, 1.05);
+   transform: scale(1.1);
+}
+
+@mixin loaderCircle {
+   border-top: 5px solid $purple;
+   border-right: 5px solid transparent;
+   border-bottom: 5px solid $purple;
+   border-left: 5px solid transparent;
+   border-radius: 50%;
+   margin: auto;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+}
+
+// footer
+// header
+
+/////////////////////////////////////////
+/* ACCUEIL : Variable, mixins, fonction */
+/////////////////////////////////////////
+
+/*-------------------------------------*/
+/*-- General styles --*/
+/*-------------------------------------*/
 body {
    margin: 0;
    padding: 0;
@@ -8,56 +79,106 @@ body {
    font-family: "Roboto", sans-serif;
 }
 
-/***************************************/
-/******** Header ********/
-/***************************************/
+/*-------------------------------------*/
+/*-- Animation accueil : loader --*/
+/*-------------------------------------*/
 
-/**** Header ****/
-header {
-   padding: 12px 0;
+@keyframes wrapper {
+   0% {
+      opacity: 1;
+      z-index: 1000;
+   }
+
+   99% {
+      opacity: 1;
+      z-index: 1000;
+   }
+
+   100% {
+      opacity: 0;
+      z-index: 1000;
+   }
+}
+
+.loader-wrapper {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background: #f6f6f6;
+   opacity: 0;
+   z-index: -1000;
+   animation: wrapper 1500ms;
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+      z-index: 1001;
+   }
+
+   99% {
+      transform: rotate(540deg);
+      z-index: 1001;
+   }
+
+   100% {
+      z-index: 1001;
+   }
+}
+
+@keyframes spinReverse {
+   0% {
+      transform: rotate(0deg);
+      z-index: 1002;
+   }
+
+   99% {
+      transform: rotate(-540deg);
+      z-index: 1002;
+   }
+
+   100% {
+      z-index: 1002;
+   }
+}
+
+.loader__outer-circle {
+   @include loaderCircle;
+   height: 100px;
+   width: 100px;
+   animation: spin 1500ms linear both;
+   z-index: -1001;
+}
+
+.loader__inner-circle {
+   @include loaderCircle;
+   opacity: 0.6;
+   height: 60px;
+   width: 60px;
+   animation: spinReverse 1500ms linear both;
+   z-index: -1002;
+}
+
+/*-------------------------------------*/
+/*-- Header --*/
+/*-------------------------------------*/
+
+.header {
+   padding: 22px 12px 8px;
    text-align: center;
 }
 
-.header__title {
-   padding: 27px 8px 37px;
-   background-color: #f6f6f6;
-
-   h1 {
-      margin: 0;
-      padding: 10px 30px 3px;
-      font-size: 25px;
-   }
-
-   h2 {
-      margin: 0;
-      padding: 10px;
-      font-size: 18px;
-      font-weight: 300;
-   }
+.header__logo {
+   width: 166px;
 }
 
-.header__btn {
-   display: flex;
-   height: 50px;
-   width: 216px;
-   margin: 20px auto;
-   color: #fff;
-   border-radius: 50px;
-   box-shadow: 0 4px 8px #c6c6c6;
-   background: linear-gradient(
-      175deg,
-      rgb(255, 121, 218) 0%,
-      rgb(147, 86, 220) 100%
-   );
+/*-------------------------------------*/
+/*-- Main --*/
+/*-------------------------------------*/
 
-   p {
-      margin: auto;
-   }
-}
-
-/**** Logo ****/
-.logo {
-   &:after {
+/*-- Location block --*/
+.location-wrapper {
+   &:before {
       content: "";
       display: block;
       height: 5px;
@@ -69,72 +190,103 @@ header {
    }
 }
 
-.logo img {
-   width: 166px;
-   padding: 10px;
-}
-
-/**** Location ****/
 .location {
-   padding: 10px 0 14px;
+   margin-left: -30px;
+   padding: 12px 0 14px;
+   text-align: center;
    font-weight: 500;
    color: #353535;
    background-color: #eaeaea;
+}
 
-   &__searchtext {
-      padding: 0 13px;
+.location__search-text {
+   padding-left: 14px;
+   font-size: 15.5px;
+}
+
+/*-- Homepage title block --*/
+.homepage-title {
+   padding: 27px 8px 10px;
+   text-align: center;
+   background-color: #f6f6f6;
+
+   h1 {
+      margin: 0;
+      padding: 10px 30px 3px;
+      font-size: 25px;
+      line-height: 1.1;
+   }
+
+   h2 {
+      margin: 0;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 300;
    }
 }
 
-/***************************************/
-/******** Navigation ********/
-/***************************************/
-
-/**** Operation ****/
-.operation {
-   padding: 14px 20px 40px;
+/*-- Explore block --*/
+.explore-wrapper {
+   background-color: #f6f6f6;
+   padding: 5px 0 52px;
 }
 
-/**** Operation steps btn ****/
-.operation-steps__btn {
+.explore__btn {
+   background: $pink-purple;
+   box-shadow: $background-shadow;
+   @include formBtnPink;
+   transition: all 250ms ease;
+
+   &:hover {
+      @include lightnessBtnPink;
+   }
+}
+
+.explore__btn p {
+   margin: auto;
+}
+
+/*-- Operation block --*/
+.operation {
+   padding: 25px 20px 40px;
+}
+
+/*-- Operation steps --*/
+.operation-step {
    margin: 26px 0 26px 10px;
-   padding: 13px 0 10px;
+   padding: 12px 0 9px;
    border-radius: 23px;
    background-color: #f6f6f6;
-   box-shadow: 0 6px 8px #e5e5e5, inset 0 1px 3px #fff;
+   box-shadow: 1px 6px 10px #e5e5e5;
+   transition: all 250ms ease;
 
-   &:last-child {
+   &:hover {
       background-color: #f5edff;
-      box-shadow: 0 6px 8px #e5e5e5, inset 0 1px 3px #fff;
-   }
+      box-shadow: 1px 6px 10px #e5e5e5;
 
-   span {
-      margin: 0 27px 0 21px;
-      color: #7e7e7e;
-   }
-
-   h3 {
-      color: #000;
-      font-size: 16px;
-      font-weight: 500;
-   }
-
-   .fa-mobile-alt {
-      font-size: 21px;
-   }
-
-   .fa-list-ul {
-      font-size: 18px;
-      margin-right: 23px;
-   }
-
-   .fa-store {
-      margin-right: 20px;
-      color: #9356dc;
+      .fa-mobile-alt,
+      .fa-list-ul,
+      .fa-store {
+         color: $purple;
+      }
    }
 }
 
-.operation-steps__btn a {
+/*-- Operation step icons --*/
+.fa-mobile-alt {
+   font-size: 21px;
+}
+
+.fa-list-ul {
+   font-size: 18px;
+   margin-right: 23px;
+}
+
+.fa-store {
+   margin-right: 20px;
+}
+
+.operation-step .step-number {
    display: flex;
    align-items: center;
    text-decoration: none;
@@ -142,7 +294,7 @@ header {
    &:before {
       content: attr(data-count);
       margin-left: -11px;
-      padding: 4px 8.5px;
+      padding: 4.5px 8.5px 3.5px;
       font-size: 14px;
       color: #fff;
       background-color: #9356dc;
@@ -150,37 +302,37 @@ header {
    }
 }
 
-/***************************************/
-/******** Article ********/
-/***************************************/
+.operation-step span {
+   margin: 0 27px 0 21px;
+   color: #7e7e7e;
+}
 
-/**** Restaurants block ****/
-.restaurants {
+.operation-step h3 {
+   color: #000;
+   font-size: 16px;
+   font-weight: 500;
+}
+
+/*-------------------------------------*/
+/*-- Article --*/
+/*-------------------------------------*/
+
+/*-- Restaurants block --*/
+.restaurants-list {
    padding: 32px 20px 47px;
    background-color: #f6f6f6;
 }
 
-/**** Restaurant card ****/
+/*-- Restaurant card --*/
 .restaurant-card {
    margin: 18px 0;
    border-radius: 17px;
    background-color: #fff;
    box-shadow: 0 6px 8px #e5e5e5;
+}
 
-   &__label {
-      position: absolute;
-      bottom: 134px;
-      right: 13px;
-      padding: 6px 12px 5px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #008766;
-      background-color: #99e2d0;
-   }
-
-   & .image-positioning {
-      object-position: 90% 61%;
-   }
+.restaurant-card .image-positioning {
+   object-position: 90% 61%;
 }
 
 .restaurant-card a {
@@ -197,6 +349,17 @@ header {
    border-radius: 17px 17px 0 0;
 }
 
+.restaurant-card__label {
+   position: absolute;
+   bottom: 134px;
+   right: 13px;
+   padding: 6px 12px 5px;
+   font-size: 14px;
+   font-weight: 500;
+   background-color: #99e2d0;
+   color: darken($green, 40%);
+}
+
 .restaurant-card-items {
    display: flex;
    justify-content: space-between;
@@ -209,6 +372,10 @@ header {
       -webkit-text-fill-color: white;
       -webkit-text-stroke-width: 1.1px;
       -webkit-text-stroke-color: black;
+
+      &:hover {
+         @include heartIcon;
+      }
    }
 }
 
@@ -228,40 +395,43 @@ header {
    }
 }
 
-/***************************************/
-/******** Footer ********/
-/***************************************/
+/*-------------------------------------*/
+/*-- Footer --*/
+/*-------------------------------------*/
+
 .footer {
    padding: 10px 25px 30px;
    background-color: #353535;
-
-   &__link {
-      display: flex;
-      flex-direction: column;
-
-      a {
-         padding: 4px 0;
-         text-decoration: none;
-         color: #fff;
-      }
-   }
 
    h2 {
       margin: 0;
       padding: 15px 0;
       font-family: "Shrikhand", sans-serif;
-      font-size: 18px;
-      font-weight: 400;
+      font-size: 19px;
+      font-weight: 200;
       color: #fff;
    }
+}
 
-   span {
-      padding-right: 12px;
-      font-size: 13px;
-   }
+.footer__link {
+   display: flex;
+   flex-direction: column;
+
    .fa-hands-helping {
+      width: 10px;
       font-size: 11px;
    }
+}
+
+.footer__link a {
+   padding: 4px 0;
+   text-decoration: none;
+   color: #fff;
+}
+
+.footer__link span {
+   padding-right: 12px;
+   font-size: 13px;
 }
 
 // srcset="large.jpg 3200w, desktop.jpg 1600w, mobile.jpg 800w" sizes="33,33vw" src="src/images/restaurants/mobile_size/img.jpg" alt=""/>

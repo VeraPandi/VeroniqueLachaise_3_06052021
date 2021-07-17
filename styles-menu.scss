@@ -1,6 +1,37 @@
-/***************************************/
-/******** General styles ********/
-/***************************************/
+// color
+$green: #99e2d0;
+
+$pink-purple: linear-gradient(
+   175deg,
+   rgb(255, 121, 218) 0%,
+   rgb(147, 86, 220) 100%
+);
+
+// Heart icon
+@mixin heartIcon {
+   cursor: pointer;
+   background-image: linear-gradient(3.46grad, #ff79da 0%, #9356dc 100%);
+   background-size: 100%;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   -webkit-text-stroke-width: inherit;
+   transition: all 400ms cubic-bezier(0.56, 0.26, 0.56, 1.05);
+   transform: scale(1.1);
+}
+
+// Ombrage btn rose
+@mixin lightnessBtnPink {
+   box-shadow: 0 7px 12px #b3b3b3;
+   opacity: 0.75;
+}
+
+// Organisation du code
+// Tous les sélecteurs ont été séparés. Seulement les sélecteurs suivants ont été imbriqués dans leur conteneur parent : les "h", les pseudo-éléments, les pseudo-classes, les icônes, image menu.
+
+/*-------------------------------------*/
+/*-- #General styles --*/
+/*-------------------------------------*/
+
 body {
    margin: 0;
    padding: 0;
@@ -8,47 +39,41 @@ body {
    font-family: "Roboto", sans-serif;
 }
 
-/***************************************/
-/******** Header ********/
-/***************************************/
+/*-------------------------------------*/
+/*-- #Header --*/
+/*-------------------------------------*/
 
-/**** Header ****/
-header {
+.header {
    padding: 22px 12px 8px;
    text-align: center;
-
-   .logo img {
-      width: 166px;
-   }
 }
 
-/**** Navigation ****/
-.menu-page__navigation {
+.header__logo {
+   width: 166px;
+}
+
+/*-------------------------------------*/
+/*-- #Navigation --*/
+/*-------------------------------------*/
+
+.navigation {
    position: relative;
 
-   a {
+   .fa-arrow-left {
       position: absolute;
-      bottom: 17px;
-      left: 22px;
+      bottom: 11px;
+      left: 11px;
       font-size: 20px;
       color: #353535;
    }
 }
 
-/***************************************/
-/******** Article ********/
-/***************************************/
+/*-------------------------------------*/
+/*-- #Main --*/
+/*-------------------------------------*/
 
-/**** Menu page ****/
-.menu-page {
-   position: relative;
-   margin-top: -50px;
-   padding: 20px 14px;
-   background-color: #f6f6f6;
-   border-radius: 40px 40px 0 0;
-}
-
-.menu-page__img {
+/*-- Menu image --*/
+.menu-image {
    position: relative;
 
    img {
@@ -58,7 +83,16 @@ header {
    }
 }
 
-.menu-page__title {
+/*-- Menu --*/
+.menu-container {
+   position: relative;
+   margin-top: -50px;
+   padding: 20px 14px;
+   background-color: #f6f6f6;
+   border-radius: 40px 40px 0 0;
+}
+
+.menu__title {
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -71,15 +105,20 @@ header {
    }
 
    .fa-heart {
-      padding: 20px;
+      margin: 15px;
+      padding: 5px;
       font-size: 22px;
       -webkit-text-fill-color: #f6f6f6;
       -webkit-text-stroke-width: 1.1px;
       -webkit-text-stroke-color: black;
+
+      &:hover {
+         @include heartIcon;
+      }
    }
 }
 
-/**** Dish category ****/
+/*-- Dish category --*/
 .dish-category {
    padding: 14px 0;
 
@@ -95,125 +134,197 @@ header {
          width: 40px;
          height: 3px;
          margin-top: 5px;
-         background-color: #99e2d0;
+         background-color: $green;
       }
    }
 }
 
-/**** Dish card ****/
-.dish-card {
-   display: flex;
-   margin: 15px auto;
-   line-height: 1.5;
-   border-radius: 20px;
-   box-shadow: 0 8px 8px #e7e7e7;
-   background-color: #fff;
+/*-------------------------------------*/
+/*-- #beginning : Menu page animation --*/
+/*-------------------------------------*/
+
+$anim-duration: 700ms;
+$anim-delay: $anim-duration / 6;
+
+@keyframes cards {
+   0% {
+      transform: translateY(17%);
+      animation-delay: 100ms;
+      opacity: 0;
+   }
+
+   25% {
+      animation-delay: 200ms;
+      opacity: 0.5;
+   }
+
+   50% {
+      animation-delay: 400ms;
+      opacity: 1;
+   }
+
+   100% {
+      animation-delay: 700ms;
+      opacity: 1;
+   }
 }
 
-.dish-card__title {
+.dish-card {
+   animation: cards $anim-duration both;
+   @for $i from 1 through 6 {
+      &--#{$i} {
+         animation-delay: $anim-delay * $i;
+      }
+   }
+}
+/*-------------------------------------*/
+/*-- #Ending : Menu page animation --*/
+/*-------------------------------------*/
+
+/*-- Dish card --*/
+.dish__title {
    width: 100%;
    padding: 9px 12px;
+   overflow: hidden;
+   white-space: nowrap;
 
    h4 {
       margin: 0;
       font-size: 18px;
       font-weight: 500;
+      text-overflow: ellipsis;
+      overflow: hidden;
    }
 
    h5 {
       margin: 0;
       font-size: 15px;
       font-weight: 300;
+      text-overflow: ellipsis;
+      overflow: hidden;
    }
 }
 
-.dish-card__btn {
-   display: flex;
-   align-items: center;
-
-   .select {
-      display: flex;
-      border-radius: 0 20px 20px 0;
-      font-size: 20px;
-      background-color: #99e2d0;
-      color: #fff;
-      height: 100%;
-      padding: 0 20px;
-
-      .fa-check-circle {
-         margin: auto 0;
-      }
-   }
-}
-
-.price {
+.dish__price {
    display: flex;
    align-items: flex-end;
-   padding: 10px 22px 10px 20px;
    font-weight: 600;
    font-size: 15px;
    color: #353535;
+   margin: 10px 24px 10px 20px;
 }
 
-/**** Order btn ****/
-.order {
-   padding-bottom: 43px;
+.dish-card {
+   display: flex;
+   margin: 15px auto;
+   line-height: 1.5;
+   border-radius: 15px;
+   box-shadow: 0 8px 8px #e7e7e7;
+   background-color: #fff;
+   overflow: hidden;
+   cursor: pointer;
+   height: 68px; // <= This height prevents the icon from jumping
 
-   .order__btn {
-      display: flex;
-      height: 50px;
-      width: 185px;
-      margin: 20px auto;
-      color: #fff;
-      border-radius: 50px;
-      box-shadow: 0 4px 8px #c6c6c6;
-      background: linear-gradient(
-         175deg,
-         rgb(255, 121, 218) 0%,
-         rgb(147, 86, 220) 100%
-      );
+   &:hover {
+      .dish__btn {
+         margin-right: -1.6px;
+         margin-left: -10px;
 
-      h3 {
-         margin: auto;
-         font-weight: 500;
-         font-size: 16px;
+         .fa-check-circle {
+            opacity: 1;
+            height: auto;
+            margin: auto 0;
+            transform: rotate(1turn);
+            transition: transform 500ms ease-in-out;
+         }
       }
    }
 }
 
-/***************************************/
-/******** Footer ********/
-/***************************************/
+.dish__btn {
+   display: flex;
+   align-items: center;
+   transition-duration: 450ms;
+   margin-right: -61px;
+   width: 64px;
+}
+
+.select {
+   display: flex;
+   border-radius: 0 15px 15px 0;
+   font-size: 20px;
+   background-color: #99e2d0;
+   color: #fff;
+   height: 100%;
+   padding: 0 20px;
+
+   .fa-check-circle {
+      margin: auto 0;
+   }
+}
+
+/*-- Order --*/
+.order {
+   padding-bottom: 43px;
+}
+
+.order__btn {
+   cursor: pointer;
+   display: flex;
+   height: 50px;
+   width: 185px;
+   margin: 20px auto;
+   color: #fff;
+   border-radius: 50px;
+   box-shadow: 0 4px 8px #c6c6c6;
+   background: $pink-purple;
+
+   &:hover {
+      @include lightnessBtnPink;
+   }
+
+   h3 {
+      margin: auto;
+      font-weight: 500;
+      font-size: 16px;
+   }
+}
+
+/*-------------------------------------*/
+/*-- #Footer --*/
+/*-------------------------------------*/
 
 .footer {
    padding: 10px 25px 30px;
    background-color: #353535;
 
-   &__link {
-      display: flex;
-      flex-direction: column;
-
-      a {
-         padding: 4px 0;
-         text-decoration: none;
-         color: #fff;
-      }
-   }
-
    h2 {
       margin: 0;
       padding: 15px 0;
       font-family: "Shrikhand", sans-serif;
-      font-size: 18px;
-      font-weight: 400;
+      font-size: 19px;
+      font-weight: 200;
       color: #fff;
    }
+}
 
-   span {
-      padding-right: 12px;
-      font-size: 13px;
-   }
+.footer__link {
+   display: flex;
+   flex-direction: column;
+
    .fa-hands-helping {
+      width: 10px;
       font-size: 11px;
    }
+}
+
+.footer__link a {
+   padding: 4px 0;
+   text-decoration: none;
+   color: #fff;
+}
+
+.footer__link span {
+   padding-right: 12px;
+   font-size: 13px;
 }

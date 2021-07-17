@@ -1,6 +1,6 @@
-/***************************************/
-/******** General styles ********/
-/***************************************/
+/*-------------------------------------*/
+/*-- #General styles --*/
+/*-------------------------------------*/
 body {
   margin: 0;
   padding: 0;
@@ -9,37 +9,48 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/***************************************/
-/******** Header ********/
-/***************************************/
-/**** Header ****/
-header {
+/*-------------------------------------*/
+/*-- #Header --*/
+/*-------------------------------------*/
+.header {
   padding: 22px 12px 8px;
   text-align: center;
 }
 
-header .logo img {
+.header__logo {
   width: 166px;
 }
 
-/**** Navigation ****/
-.menu-page__navigation {
+/*-------------------------------------*/
+/*-- #Navigation --*/
+/*-------------------------------------*/
+.navigation {
   position: relative;
 }
-
-.menu-page__navigation a {
+.navigation .fa-arrow-left {
   position: absolute;
-  bottom: 17px;
-  left: 22px;
+  bottom: 11px;
+  left: 11px;
   font-size: 20px;
   color: #353535;
 }
 
-/***************************************/
-/******** Article ********/
-/***************************************/
-/**** Menu page ****/
-.menu-page {
+/*-------------------------------------*/
+/*-- #Main --*/
+/*-------------------------------------*/
+/*-- Menu image --*/
+.menu-image {
+  position: relative;
+}
+.menu-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 266px;
+  width: 100%;
+}
+
+/*-- Menu --*/
+.menu-container {
   position: relative;
   margin-top: -50px;
   padding: 20px 14px;
@@ -47,18 +58,7 @@ header .logo img {
   border-radius: 40px 40px 0 0;
 }
 
-.menu-page__img {
-  position: relative;
-}
-
-.menu-page__img img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 266px;
-  width: 100%;
-}
-
-.menu-page__title {
+.menu__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,31 +72,44 @@ header .logo img {
   font-size: 18px;
   font-family: "Shrikhand", sans-serif;
 }
-
-.menu-page__title h2 {
+.menu__title h2 {
   margin: 0;
 }
-
-.menu-page__title .fa-heart {
-  padding: 20px;
+.menu__title .fa-heart {
+  margin: 15px;
+  padding: 5px;
   font-size: 22px;
   -webkit-text-fill-color: #f6f6f6;
   -webkit-text-stroke-width: 1.1px;
   -webkit-text-stroke-color: black;
 }
+.menu__title .fa-heart:hover {
+  cursor: pointer;
+  background-image: -o-linear-gradient(86.886deg, #ff79da 0%, #9356dc 100%);
+  background-image: linear-gradient(3.46grad, #ff79da 0%, #9356dc 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: inherit;
+  -webkit-transition: all 400ms cubic-bezier(0.56, 0.26, 0.56, 1.05);
+  -o-transition: all 400ms cubic-bezier(0.56, 0.26, 0.56, 1.05);
+  transition: all 400ms cubic-bezier(0.56, 0.26, 0.56, 1.05);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
 
-/**** Dish category ****/
+/*-- Dish category --*/
 .dish-category {
   padding: 14px 0;
 }
-
 .dish-category h3 {
   margin: 0 6px;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 16px;
 }
-
 .dish-category h3:after {
   content: "";
   display: block;
@@ -106,80 +119,194 @@ header .logo img {
   background-color: #99e2d0;
 }
 
-/**** Dish card ****/
+/*-------------------------------------*/
+/*-- #beginning : Menu page animation --*/
+/*-------------------------------------*/
+@-webkit-keyframes cards {
+  0% {
+    -webkit-transform: translateY(17%);
+            transform: translateY(17%);
+    -webkit-animation-delay: 100ms;
+            animation-delay: 100ms;
+    opacity: 0;
+  }
+  25% {
+    -webkit-animation-delay: 200ms;
+            animation-delay: 200ms;
+    opacity: 0.5;
+  }
+  50% {
+    -webkit-animation-delay: 400ms;
+            animation-delay: 400ms;
+    opacity: 1;
+  }
+  100% {
+    -webkit-animation-delay: 700ms;
+            animation-delay: 700ms;
+    opacity: 1;
+  }
+}
+@keyframes cards {
+  0% {
+    -webkit-transform: translateY(17%);
+            transform: translateY(17%);
+    -webkit-animation-delay: 100ms;
+            animation-delay: 100ms;
+    opacity: 0;
+  }
+  25% {
+    -webkit-animation-delay: 200ms;
+            animation-delay: 200ms;
+    opacity: 0.5;
+  }
+  50% {
+    -webkit-animation-delay: 400ms;
+            animation-delay: 400ms;
+    opacity: 1;
+  }
+  100% {
+    -webkit-animation-delay: 700ms;
+            animation-delay: 700ms;
+    opacity: 1;
+  }
+}
 .dish-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 15px auto;
-  line-height: 1.5;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 8px 8px #e7e7e7;
-          box-shadow: 0 8px 8px #e7e7e7;
-  background-color: #fff;
+  -webkit-animation: cards 700ms both;
+          animation: cards 700ms both;
+}
+.dish-card--1 {
+  -webkit-animation-delay: 116.6666666667ms;
+          animation-delay: 116.6666666667ms;
+}
+.dish-card--2 {
+  -webkit-animation-delay: 233.3333333333ms;
+          animation-delay: 233.3333333333ms;
+}
+.dish-card--3 {
+  -webkit-animation-delay: 350ms;
+          animation-delay: 350ms;
+}
+.dish-card--4 {
+  -webkit-animation-delay: 466.6666666667ms;
+          animation-delay: 466.6666666667ms;
+}
+.dish-card--5 {
+  -webkit-animation-delay: 583.3333333333ms;
+          animation-delay: 583.3333333333ms;
+}
+.dish-card--6 {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
 }
 
-.dish-card__title {
+/*-------------------------------------*/
+/*-- #Ending : Menu page animation --*/
+/*-------------------------------------*/
+/*-- Dish card --*/
+.dish__title {
   width: 100%;
   padding: 9px 12px;
+  overflow: hidden;
+  white-space: nowrap;
 }
-
-.dish-card__title h4 {
+.dish__title h4 {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  overflow: hidden;
 }
-
-.dish-card__title h5 {
+.dish__title h5 {
   margin: 0;
   font-size: 15px;
   font-weight: 300;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.dish-card__btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.dish-card__btn .select {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 0 20px 20px 0;
-  font-size: 20px;
-  background-color: #99e2d0;
-  color: #fff;
-  height: 100%;
-  padding: 0 20px;
-}
-
-.dish-card__btn .select .fa-check-circle {
-  margin: auto 0;
-}
-
-.price {
+.dish__price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding: 10px 22px 10px 20px;
   font-weight: 600;
   font-size: 15px;
   color: #353535;
+  margin: 10px 24px 10px 20px;
 }
 
-/**** Order btn ****/
+.dish-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px auto;
+  line-height: 1.5;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 8px 8px #e7e7e7;
+          box-shadow: 0 8px 8px #e7e7e7;
+  background-color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  height: 68px;
+}
+.dish-card:hover .dish__btn {
+  margin-right: -1.6px;
+  margin-left: -10px;
+}
+.dish-card:hover .dish__btn .fa-check-circle {
+  opacity: 1;
+  height: auto;
+  margin: auto 0;
+  -webkit-transform: rotate(1turn);
+      -ms-transform: rotate(1turn);
+          transform: rotate(1turn);
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  -o-transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+.dish__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition-duration: 450ms;
+       -o-transition-duration: 450ms;
+          transition-duration: 450ms;
+  margin-right: -61px;
+  width: 64px;
+}
+
+.select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 15px 15px 0;
+  font-size: 20px;
+  background-color: #99e2d0;
+  color: #fff;
+  height: 100%;
+  padding: 0 20px;
+}
+.select .fa-check-circle {
+  margin: auto 0;
+}
+
+/*-- Order --*/
 .order {
   padding-bottom: 43px;
 }
 
-.order .order__btn {
+.order__btn {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,21 +317,34 @@ header .logo img {
   border-radius: 50px;
   -webkit-box-shadow: 0 4px 8px #c6c6c6;
           box-shadow: 0 4px 8px #c6c6c6;
+  background: -o-linear-gradient(275deg, #ff79da 0%, #9356dc 100%);
   background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
 }
-
-.order .order__btn h3 {
+.order__btn:hover {
+  -webkit-box-shadow: 0 7px 12px #b3b3b3;
+          box-shadow: 0 7px 12px #b3b3b3;
+  opacity: 0.75;
+}
+.order__btn h3 {
   margin: auto;
   font-weight: 500;
   font-size: 16px;
 }
 
-/***************************************/
-/******** Footer ********/
-/***************************************/
+/*-------------------------------------*/
+/*-- #Footer --*/
+/*-------------------------------------*/
 .footer {
   padding: 10px 25px 30px;
   background-color: #353535;
+}
+.footer h2 {
+  margin: 0;
+  padding: 15px 0;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 19px;
+  font-weight: 200;
+  color: #fff;
 }
 
 .footer__link {
@@ -216,6 +356,10 @@ header .logo img {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.footer__link .fa-hands-helping {
+  width: 10px;
+  font-size: 11px;
+}
 
 .footer__link a {
   padding: 4px 0;
@@ -223,21 +367,8 @@ header .logo img {
   color: #fff;
 }
 
-.footer h2 {
-  margin: 0;
-  padding: 15px 0;
-  font-family: "Shrikhand", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #fff;
-}
-
-.footer span {
+.footer__link span {
   padding-right: 12px;
   font-size: 13px;
-}
-
-.footer .fa-hands-helping {
-  font-size: 11px;
 }
 /*# sourceMappingURL=styles-menu.css.map */
