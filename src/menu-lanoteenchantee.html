@@ -4,7 +4,7 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Menu - La note enchant&#xE9;e</title>
+      <title>Menu - La note enchantée</title>
       <link
          rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -14,86 +14,95 @@
          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap"
          rel="stylesheet"
       />
-      <link rel="stylesheet" href="styles-menu.css" />
+      <link rel="stylesheet" href="css/styles-menu.css" />
    </head>
 
    <body>
-      <header>
-         <div class="logo">
-            <img src="src/images/logo/ohmyfood.png" alt="Logo de Ohmyfood" />
-         </div>
+      <!-- Header -->
+      <header class="header">
+         <img
+            class="header__logo"
+            src="images/logo/ohmyfood.png"
+            alt="Logo de Ohmyfood"
+         />
+
+         <!-- Navigation -->
+         <nav class="navigation">
+            <a href="index.html">
+               <span class="fas fa-arrow-left"></span>
+            </a>
+         </nav>
       </header>
-      <!-- Navigation -->
-      <nav class="menu-page__navigation">
-         <a href="../index.html">
-            <span class="fas fa-arrow-left"></span>
-         </a>
-      </nav>
 
       <main>
-         <div class="menu-page__img">
+         <div class="menu-image">
             <img
-               src="src/images/restaurants/mobile_size/restaurant_note_enchantee.jpg"
-               alt="Menu à la française"
+               src="images/restaurants/mobile_size/restaurant_note_enchantee.jpg"
+               alt="Présentation de plusieurs assiettes contenant chacune un plat de type méditéranéen."
             />
          </div>
 
-         <!-- Menu -->
-         <article class="menu-page">
-            <div class="menu-page__title">
-               <h2>La note enchant&#xE9;e</h2>
+         <!-- Menu container -->
+         <article class="menu-container">
+            <div class="menu__title">
+               <h2>La note enchantée</h2>
                <span class="fas fa-heart"></span>
             </div>
 
-            <!-- Starter category -->
+            <!-- Dish category : starter -->
             <section class="dish-category">
                <h3>Entrées</h3>
-               <section class="dish-card">
-                  <div class="dish-card__title">
+
+               <!-- Dish card -->
+               <section class="dish-card dish-card--1">
+                  <div class="dish__title">
                      <h4>Ravioles de foie gras</h4>
                      <h5>Accompagnés de leur crème à la truffe</h5>
                   </div>
-                  <span class="price">25€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">25€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
                   </div>
                </section>
 
-               <section class="dish-card">
-                  <div class="dish-card__title">
+               <!-- Dish card -->
+               <section class="dish-card dish-card--2">
+                  <div class="dish__title">
                      <h4>Caviar osciètre</h4>
                      <h5>Sur blini à la farine de blé noir</h5>
                   </div>
-                  <span class="price">35€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">35€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
                   </div>
                </section>
 
-               <section class="dish-card">
-                  <div class="dish-card__title">
+               <!-- Dish card -->
+               <section class="dish-card dish-card--3">
+                  <div class="dish__title">
                      <h4>Homard et espuma de potiron</h4>
                      <h5>Mariné aux zestes d'orange</h5>
                   </div>
-                  <span class="price">20€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">20€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
                   </div>
                </section>
 
-               <section class="dish-card">
-                  <div class="dish-card__title">
+               <!-- Dish card -->
+               <section class="dish-card dish-card--4">
+                  <div class="dish__title">
                      <h4>Foie gras de canard cuit entier</h4>
                      <h5>Confiture de figue et pain toasté</h5>
                   </div>
-                  <span class="price">35€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">35€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
@@ -101,42 +110,46 @@
                </section>
             </section>
 
-            <!-- Main course category -->
+            <!-- Dish category : main course -->
             <section class="dish-category">
                <h3>Plats</h3>
-               <section class="dish-card">
-                  <div class="dish-card__title">
+
+               <!-- Dish card -->
+               <section class="dish-card dish-card--1">
+                  <div class="dish__title">
                      <h4>Noix de coquilles Saint-Jacques</h4>
                      <h5>Sur lit de purée de céleri-rave</h5>
                   </div>
-                  <span class="price">40€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">40€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
                   </div>
                </section>
 
-               <section class="dish-card">
-                  <div class="dish-card__title">
+               <!-- Dish card -->
+               <section class="dish-card dish-card--2">
+                  <div class="dish__title">
                      <h4>Langoustine poêlée</h4>
                      <h5>Purée de patate douce</h5>
                   </div>
-                  <span class="price">35€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">35€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
                   </div>
                </section>
 
-               <section class="dish-card">
-                  <div class="dish-card__title">
+               <!-- Dish card -->
+               <section class="dish-card dish-card--3">
+                  <div class="dish__title">
                      <h4>Mijoté de queue de boeuf</h4>
                      <h5>Et riz sauvage aux zestes de citron</h5>
                   </div>
-                  <span class="price">44€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">44€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
@@ -144,42 +157,46 @@
                </section>
             </section>
 
-            <!-- Dessert category -->
+            <!-- Dish category : dessert -->
             <section class="dish-category">
                <h3>Desserts</h3>
-               <section class="dish-card">
-                  <div class="dish-card__title">
+
+               <!-- Dish card -->
+               <section class="dish-card dish-card--1">
+                  <div class="dish__title">
                      <h4>Macaron noisette et chocolat</h4>
                      <h5>Glace au caramel brun et sel de Guérande</h5>
                   </div>
-                  <span class="price">18€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">18€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
                   </div>
                </section>
 
-               <section class="dish-card">
-                  <div class="dish-card__title">
+               <!-- Dish card -->
+               <section class="dish-card dish-card--2">
+                  <div class="dish__title">
                      <h4>Baba au rhum revisité</h4>
                      <h5>Avec son coulis de citron</h5>
                   </div>
-                  <span class="price">22€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">22€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
                   </div>
                </section>
 
-               <section class="dish-card">
-                  <div class="dish-card__title">
+               <!-- Dish card -->
+               <section class="dish-card dish-card--3">
+                  <div class="dish__title">
                      <h4>Tarte au citron meringuée</h4>
                      <h5>Déstructurée</h5>
                   </div>
-                  <span class="price">23€</span>
-                  <div class="dish-card__btn">
+                  <span class="dish__price">23€</span>
+                  <div class="dish__btn">
                      <span class="select"
                         ><i class="fas fa-check-circle"></i
                      ></span>
@@ -187,6 +204,7 @@
                </section>
             </section>
 
+            <!-- Order btn -->
             <section class="order">
                <div class="order__btn">
                   <h3>Commander</h3>
@@ -195,6 +213,7 @@
          </article>
       </main>
 
+      <!-- Footer -->
       <footer class="footer">
          <h2>ohmyfood</h2>
          <div class="footer__link">

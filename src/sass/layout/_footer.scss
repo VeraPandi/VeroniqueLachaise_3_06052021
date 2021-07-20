@@ -1,0 +1,38 @@
+/*-------------------------------------*/
+/*-- Footer --*/
+/*-------------------------------------*/
+
+.footer {
+   padding: 10px 25px 30px;
+   background-color: #353535;
+
+   h2 {
+      margin: 0;
+      padding: 15px 0;
+      font-family: "Shrikhand", sans-serif;
+      font-size: 19px;
+      font-weight: 200;
+      color: #fff;
+   }
+}
+
+.footer__link {
+   display: flex;
+   flex-direction: column;
+
+   .fa-hands-helping {
+      width: 10px;
+      font-size: 11px;
+   }
+}
+
+.footer__link a {
+   padding: 4px 0;
+   text-decoration: none;
+   color: #fff;
+}
+
+.footer__link span {
+   padding-right: 12px;
+   font-size: 13px;
+}

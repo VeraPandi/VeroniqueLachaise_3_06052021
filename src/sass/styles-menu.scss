@@ -1,0 +1,12 @@
+// "base" folder
+@use "base/global";
+
+// "layout" folder
+@use "layout/header";
+@use "layout/footer";
+
+// "website pages" folder
+@use "pages/menu";
+
+// Organisation du code
+// Tous les sélecteurs ont été séparés. Seulement les sélecteurs suivants ont été imbriqués dans leur conteneur parent : les "h", les pseudo-éléments, les pseudo-classes, les icônes, image menu.

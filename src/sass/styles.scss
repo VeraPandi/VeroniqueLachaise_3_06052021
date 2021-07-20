@@ -1,0 +1,17 @@
+// "base" folder
+@use "base/global";
+
+// "layout" folder
+@use "layout/header";
+@use "layout/footer";
+
+// "website pages" folder
+@use "pages/home";
+
+// Organisation du code sass sur l'ensemble du site :
+// - Seulement ces éléments ont été imbriqués afin de garder une bonne lisibilité du code : icon / pseudo-classe / pseudo-élément / titres.
+// - Les commentaires flechés ne doivent pas être retirés. Ils servent à comprendre le rôle d'une règle scss.
+// Le fichier "main" utilise les règles "@use" à la place des règles "@import".
+// Le fichier "map" a été gardé afin de simplifier la maintenance du code. Il peut être retiré si vous jugez que sa présence ne vous est pas utile.
+
+// srcset="large.jpg 3200w, desktop.jpg 1600w, mobile.jpg 800w" sizes="33,33vw" src="src/images/restaurants/mobile_size/img.jpg" alt=""/>
