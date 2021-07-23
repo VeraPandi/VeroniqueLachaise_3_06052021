@@ -1,17 +1,25 @@
 @use "variables" as *;
 
-/*-------------------------------------*/
-/*-- GLOBAL : Pink-purple button --*/
-/*-------------------------------------*/
+// *-------------------------------------*/
+// *-- GLOBAL : Pink-purple button --*/
+// *-------------------------------------*/
 
 // Pink-purple button shape
 @mixin formBtnPink {
    display: flex;
    height: 50px;
-   width: 216px;
    margin: 5px auto;
+   transition: all 250ms ease;
    color: #fff;
+   text-decoration: none;
    border-radius: 50px;
+   cursor: pointer;
+}
+
+@mixin textBtnPink {
+   margin: auto;
+   font-size: 16px;
+   font-weight: 500;
 }
 
 // Pink-purple button shade
@@ -20,37 +28,37 @@
    opacity: 0.75;
 }
 
-/*-------------------------------------*/
-/*-- GLOBAL : Heart icon --*/
-/*-------------------------------------*/
+// *-------------------------------------*/
+// *-- GLOBAL : Heart icon --*/
+// *-------------------------------------*/
 
 // Appearance and color of the "heart" icon
 @mixin heartIcon {
-   cursor: pointer;
+   transition: all 400ms cubic-bezier(0.56, 0.26, 0.56, 1.05);
+   transform: scale(1.1);
    background-image: linear-gradient(3.46grad, #ff79da 0%, #9356dc 100%);
    background-size: 100%;
    background-clip: text;
    -webkit-text-fill-color: transparent;
    -webkit-text-stroke-width: inherit;
-   transition: all 400ms cubic-bezier(0.56, 0.26, 0.56, 1.05);
-   transform: scale(1.1);
+   cursor: pointer;
 }
 
-/*-------------------------------------*/
-/*-- HOME PAGE : Loader spinner --*/
-/*-------------------------------------*/
+// *-------------------------------------*/
+// *-- HOME PAGE : Loader spinner --*/
+// *-------------------------------------*/
 
 // Loader shape and color
 @mixin loaderCircle {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   margin: auto;
    border-top: 5px solid $purple;
    border-right: 5px solid transparent;
    border-bottom: 5px solid $purple;
    border-left: 5px solid transparent;
    border-radius: 50%;
-   margin: auto;
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   right: 0;
-   left: 0;
 }

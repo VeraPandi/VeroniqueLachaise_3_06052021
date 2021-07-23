@@ -8,10 +8,20 @@
 // "website pages" folder
 @use "pages/home";
 
-// Organisation du code sass sur l'ensemble du site :
-// - Seulement ces éléments ont été imbriqués afin de garder une bonne lisibilité du code : icon / pseudo-classe / pseudo-élément / titres.
-// - Les commentaires flechés ne doivent pas être retirés. Ils servent à comprendre le rôle d'une règle scss.
-// Le fichier "main" utilise les règles "@use" à la place des règles "@import".
-// Le fichier "map" a été gardé afin de simplifier la maintenance du code. Il peut être retiré si vous jugez que sa présence ne vous est pas utile.
+// ------------------------------------------------------------------------ //
+// Information and code organization :
 
+// - On the site, we used "Dart Sass" (version : 1.35.2) with @use and @forward. The @forward files are gathered in the "index.scss" file, located in the "abstracts" folder.
+
+// - Only these elements have been nested in order to keep the code easy to read: icon / pseudo-class / pseudo-element / titles / media queries.
+
+// - Comments with arrows that are written to "scss" files should not be removed.
+
+// - The "map" file has been kept in order to simplify the maintenance of the code. It can be removed if you feel that its presence is not useful to you.
+// ------------------------------------------------------------------------ //
+// Last code update : July 2021.
+// ----------------------------- //
+
+//
+//
 // srcset="large.jpg 3200w, desktop.jpg 1600w, mobile.jpg 800w" sizes="33,33vw" src="src/images/restaurants/mobile_size/img.jpg" alt=""/>

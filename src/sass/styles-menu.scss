@@ -8,5 +8,16 @@
 // "website pages" folder
 @use "pages/menu";
 
-// Organisation du code
-// Tous les sélecteurs ont été séparés. Seulement les sélecteurs suivants ont été imbriqués dans leur conteneur parent : les "h", les pseudo-éléments, les pseudo-classes, les icônes, image menu.
+// ------------------------------------------------------------------------ //
+// Information and code organization :
+
+// - On the site, we used "Dart Sass" (version : 1.35.2) with @use and @forward. The @forward files are gathered in the "index.scss" file, located in the "abstracts" folder.
+
+// - Only these elements have been nested in order to keep the code easy to read: icon / pseudo-class / pseudo-element / titles / image of the menus / media queries.
+
+// - Comments with arrows that are written to "scss" files should not be removed.
+
+// - The "map" file has been kept in order to simplify the maintenance of the code. It can be removed if you feel that its presence is not useful to you.
+// ------------------------------------------------------------------------ //
+// Last code update : July 2021.
+// ----------------------------- //

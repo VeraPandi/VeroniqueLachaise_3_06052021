@@ -13,6 +13,7 @@
       left: 11px;
       font-size: 20px;
       color: #353535;
+      cursor: pointer;
    }
 }
 
@@ -31,6 +32,10 @@
    }
 }
 
+.menu-image--positioning {
+   object-position: 90% 61%; // <= This rule is used to manage the initial positioning of the targeted element.
+}
+
 /*-- Menu container --*/
 .menu-container {
    position: relative;
@@ -42,14 +47,18 @@
 
 .menu__title {
    display: flex;
-   align-items: center;
    justify-content: space-between;
+   align-items: center;
    margin: 0 6px 6px;
    font-size: 18px;
    font-family: "Shrikhand", sans-serif;
 
    h2 {
       margin: 0;
+
+      @media (min-width: $medium-media) {
+         margin: 0 auto;
+      }
    }
 
    .fa-heart {
@@ -60,7 +69,8 @@
       -webkit-text-stroke-width: 1.1px;
       -webkit-text-stroke-color: black;
 
-      &:hover {
+      &:hover,
+      &:active {
          @include heartIcon;
       }
    }
@@ -70,17 +80,28 @@
 .dish-category {
    padding: 14px 0;
 
+   @media (min-width: $small-media) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+   }
+
    h3 {
       margin: 0 6px;
-      text-transform: uppercase;
-      font-weight: 300;
       font-size: 16px;
+      font-weight: 300;
+      text-transform: uppercase;
+
+      @media (min-width: $small-media) {
+         width: 100%;
+         margin: revert;
+      }
 
       &:after {
          content: "";
          display: block;
-         width: 40px;
          height: 3px;
+         width: 40px;
          margin-top: 5px;
          background-color: $green;
       }
@@ -93,24 +114,24 @@ $anim-delay: $anim-duration / 6;
 
 @keyframes cards {
    0% {
+      opacity: 0;
       transform: translateY(17%);
       animation-delay: 100ms;
-      opacity: 0;
    }
 
    25% {
-      animation-delay: 200ms;
       opacity: 0.5;
+      animation-delay: 200ms;
    }
 
    50% {
-      animation-delay: 400ms;
       opacity: 1;
+      animation-delay: 400ms;
    }
 
    100% {
-      animation-delay: 700ms;
       opacity: 1;
+      animation-delay: 700ms;
    }
 }
 
@@ -132,50 +153,88 @@ $anim-delay: $anim-duration / 6;
 
    h4 {
       margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 18px;
       font-weight: 500;
-      text-overflow: ellipsis;
-      overflow: hidden;
    }
 
    h5 {
       margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 15px;
       font-weight: 300;
-      text-overflow: ellipsis;
-      overflow: hidden;
    }
 }
 
 .dish__price {
    display: flex;
    align-items: flex-end;
-   font-weight: 600;
-   font-size: 15px;
-   color: #353535;
    margin: 10px 24px 10px 20px;
+   font-size: 15px;
+   font-weight: 600;
+   color: #353535;
 }
 
 .dish-card {
    display: flex;
+   height: 68px; // <= This height prevents the icon from jumping.
    margin: 15px auto;
+   overflow: hidden;
    line-height: 1.5;
    border-radius: 15px;
-   box-shadow: 0 8px 8px #e7e7e7;
    background-color: #fff;
-   overflow: hidden;
+   box-shadow: 0 8px 8px #e7e7e7;
    cursor: pointer;
-   height: 68px; // <= This height prevents the icon from jumping
+   // flex: 1;
+   // max-width: 700px;
+   // width: 730px;
 
-   &:hover {
+   // &:last-child {
+   //    max-width: 48%;
+   // }
+
+   @media (min-width: $small-media) {
+      // width: 700px;
+      // min-width: 420px;
+      // min-width: 45%;
+      // flex: 0.5;
+      width: 48%;
+      margin: 7px;
+
+      // &:last-child {
+      //    max-width: 48.2%;
+
+      //    @media (min-width: $medium-media) {
+      //       max-width: 48.7%;
+      //    }
+      // }
+   }
+
+   @media (min-width: $large-media) {
+      width: 32%;
+   }
+   // @media (min-width: $medium-media) {
+   //    min-width: 47%;
+   //    margin: 7px 10px;
+   // }
+
+   // @media (min-width: $large-media) {
+   //    margin: 7px auto;
+   //    min-width: 30%;
+   // }
+
+   &:hover,
+   &:active {
       .dish__btn {
          margin-right: -1.6px;
          margin-left: -10px;
 
          .fa-check-circle {
-            opacity: 1;
             height: auto;
             margin: auto 0;
+            opacity: 1;
             transform: rotate(1turn);
             transition: transform 500ms ease-in-out;
          }
@@ -186,19 +245,19 @@ $anim-delay: $anim-duration / 6;
 .dish__btn {
    display: flex;
    align-items: center;
-   transition-duration: 450ms;
-   margin-right: -61px;
    width: 64px;
+   margin-right: -61px;
+   transition-duration: 450ms;
 }
 
 .select {
    display: flex;
-   border-radius: 0 15px 15px 0;
-   font-size: 20px;
-   background-color: #99e2d0;
-   color: #fff;
    height: 100%;
    padding: 0 20px;
+   font-size: 20px;
+   border-radius: 0 15px 15px 0;
+   color: #fff;
+   background-color: #99e2d0;
 
    .fa-check-circle {
       margin: auto 0;
@@ -207,27 +266,21 @@ $anim-delay: $anim-duration / 6;
 
 /*-- Order btn --*/
 .order {
-   padding-bottom: 43px;
+   padding: 16px 0 58px;
 }
 
-.order__btn {
-   cursor: pointer;
-   display: flex;
-   height: 50px;
+.order__btn a {
    width: 185px;
-   margin: 20px auto;
-   color: #fff;
-   border-radius: 50px;
-   box-shadow: 0 4px 8px #c6c6c6;
    background: $pink-purple;
+   box-shadow: $background-shadow;
+   @include formBtnPink;
 
-   &:hover {
+   &:hover,
+   &:active {
       @include lightnessBtnPink;
    }
+}
 
-   h3 {
-      margin: auto;
-      font-weight: 500;
-      font-size: 16px;
-   }
+.order__btn p {
+   @include textBtnPink;
 }
