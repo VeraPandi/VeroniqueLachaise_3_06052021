@@ -94,7 +94,7 @@
 
       @media (min-width: $small-media) {
          width: 100%;
-         margin: revert;
+         margin-bottom: 8px;
       }
 
       &:after {
@@ -187,43 +187,15 @@ $anim-delay: $anim-duration / 6;
    background-color: #fff;
    box-shadow: 0 8px 8px #e7e7e7;
    cursor: pointer;
-   // flex: 1;
-   // max-width: 700px;
-   // width: 730px;
-
-   // &:last-child {
-   //    max-width: 48%;
-   // }
 
    @media (min-width: $small-media) {
-      // width: 700px;
-      // min-width: 420px;
-      // min-width: 45%;
-      // flex: 0.5;
       width: 48%;
       margin: 7px;
-
-      // &:last-child {
-      //    max-width: 48.2%;
-
-      //    @media (min-width: $medium-media) {
-      //       max-width: 48.7%;
-      //    }
-      // }
    }
 
    @media (min-width: $large-media) {
       width: 32%;
    }
-   // @media (min-width: $medium-media) {
-   //    min-width: 47%;
-   //    margin: 7px 10px;
-   // }
-
-   // @media (min-width: $large-media) {
-   //    margin: 7px auto;
-   //    min-width: 30%;
-   // }
 
    &:hover,
    &:active {
@@ -267,6 +239,10 @@ $anim-delay: $anim-duration / 6;
 /*-- Order btn --*/
 .order {
    padding: 16px 0 58px;
+
+   h4 {
+      @include textBtnPink;
+   }
 }
 
 .order__btn a {
@@ -279,8 +255,4 @@ $anim-delay: $anim-duration / 6;
    &:active {
       @include lightnessBtnPink;
    }
-}
-
-.order__btn p {
-   @include textBtnPink;
 }

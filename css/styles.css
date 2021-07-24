@@ -188,17 +188,14 @@ body {
 }
 
 .location {
-  margin-left: -30px;
   padding: 12px 0 14px;
   text-align: center;
   font-weight: 500;
   color: #353535;
   background-color: #eaeaea;
 }
-@media (min-width: 1500px) {
-  .location {
-    margin: 0 auto;
-  }
+.location .fa-map-marker-alt {
+  margin-left: -30px;
 }
 
 .location__search-text {
@@ -276,20 +273,18 @@ body {
   border-radius: 23px;
   background-color: #f6f6f6;
   box-shadow: 1px 6px 10px #e5e5e5;
-  transition: all 250ms ease;
+  transition: all 200ms ease;
 }
 @media (min-width: 798px) {
   .operation-step {
     margin-right: 15px;
   }
 }
-.operation-step:hover {
+.operation-step:last-child:hover {
   background-color: #f5edff;
   box-shadow: 1px 6px 10px #e5e5e5;
 }
-.operation-step:hover .fa-mobile-alt,
-.operation-step:hover .fa-list-ul,
-.operation-step:hover .fa-store {
+.operation-step:last-child:hover .fa-store {
   color: #9356dc;
 }
 @media (min-width: 798px) {
@@ -428,7 +423,7 @@ body {
   transform: scale(1.1);
   background-image: linear-gradient(3.46grad, #ff79da 0%, #9356dc 100%);
   background-size: 100%;
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: inherit;
   cursor: pointer;

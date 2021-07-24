@@ -145,7 +145,7 @@ body {
   transform: scale(1.1);
   background-image: linear-gradient(3.46grad, #ff79da 0%, #9356dc 100%);
   background-size: 100%;
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: inherit;
   cursor: pointer;
@@ -171,7 +171,7 @@ body {
 @media (min-width: 798px) {
   .dish-category h3 {
     width: 100%;
-    margin: revert;
+    margin-bottom: 8px;
   }
 }
 .dish-category h3:after {
@@ -315,6 +315,11 @@ body {
 .order {
   padding: 16px 0 58px;
 }
+.order h4 {
+  margin: auto;
+  font-size: 16px;
+  font-weight: 500;
+}
 
 .order__btn a {
   width: 185px;
@@ -332,12 +337,6 @@ body {
 .order__btn a:hover, .order__btn a:active {
   box-shadow: 0 7px 12px #b3b3b3;
   opacity: 0.75;
-}
-
-.order__btn p {
-  margin: auto;
-  font-size: 16px;
-  font-weight: 500;
 }
 
 /*# sourceMappingURL=styles-menu.css.map */
