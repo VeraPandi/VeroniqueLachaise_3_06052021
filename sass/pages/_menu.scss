@@ -23,8 +23,6 @@
 
 /*-- Menu image --*/
 .menu-image {
-   position: relative;
-
    img {
       object-fit: cover;
       height: 266px;
@@ -86,6 +84,11 @@
       justify-content: start;
    }
 
+   @media (min-width: $extra-large-media) {
+      max-width: 90%;
+      margin: 0 auto;
+   }
+
    h3 {
       margin: 0 6px;
       font-size: 16px;
@@ -109,8 +112,8 @@
 }
 
 /*-- Dish card animations --*/
-$anim-duration: 700ms;
-$anim-delay: $anim-duration / 6;
+$anim-duration: 900ms;
+$anim-delay: $anim-duration / 5;
 
 @keyframes cards {
    0% {
@@ -131,13 +134,14 @@ $anim-delay: $anim-duration / 6;
 
    100% {
       opacity: 1;
-      animation-delay: 700ms;
+      animation-delay: 900ms;
    }
 }
 
 .dish-card {
    animation: cards $anim-duration both;
-   @for $i from 1 through 6 {
+
+   @for $i from 1 through 5 {
       &--#{$i} {
          animation-delay: $anim-delay * $i;
       }
@@ -174,7 +178,6 @@ $anim-delay: $anim-duration / 6;
    margin: 10px 24px 10px 20px;
    font-size: 15px;
    font-weight: 600;
-   color: #353535;
 }
 
 .dish-card {
@@ -206,7 +209,6 @@ $anim-delay: $anim-duration / 6;
          .fa-check-circle {
             height: auto;
             margin: auto 0;
-            opacity: 1;
             transform: rotate(1turn);
             transition: transform 500ms ease-in-out;
          }

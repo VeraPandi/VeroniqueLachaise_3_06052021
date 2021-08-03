@@ -18,21 +18,20 @@
 
    100% {
       z-index: 1000;
-      opacity: 0;
+      opacity: 1;
    }
 }
 
 .loader-wrapper {
    position: fixed;
-   z-index: -1000;
+   z-index: -10;
    height: 100%;
    width: 100%;
-   background: #f6f6f6;
+   background: $gray-background;
    opacity: 0;
-   animation: wrapper 1500ms;
+   animation: wrapper 1300ms;
 
    @media (min-width: $extra-large-media) {
-      max-width: 1500px;
       margin: 0 auto;
    }
 }
@@ -41,12 +40,12 @@
 @keyframes spin {
    0% {
       z-index: 1001;
-      transform: rotate(0deg);
+      transform: rotate(0turn);
    }
 
    99% {
       z-index: 1001;
-      transform: rotate(540deg);
+      transform: rotate(1turn);
    }
 
    100% {
@@ -57,36 +56,36 @@
 /*-- Reverse Rotation --*/
 @keyframes spinReverse {
    0% {
-      z-index: 1002;
-      transform: rotate(0deg);
+      z-index: 1001;
+      transform: rotate(0turn);
    }
 
    99% {
-      z-index: 1002;
-      transform: rotate(-540deg);
+      z-index: 1001;
+      transform: rotate(-1turn);
    }
 
    100% {
-      z-index: 1002;
+      z-index: 1001;
    }
 }
 
 /*-- Outer circle --*/
 .loader__outer-circle {
-   z-index: -1001;
+   z-index: -10;
    height: 100px;
    width: 100px;
-   animation: spin 1500ms linear both;
+   animation: spin 1400ms linear both;
    @include loaderCircle;
 }
 
 /*-- Inner circle --*/
 .loader__inner-circle {
-   z-index: -1002;
+   z-index: -10;
    height: 60px;
    width: 60px;
    opacity: 0.6;
-   animation: spinReverse 1500ms linear both;
+   animation: spinReverse 1400ms linear both;
    @include loaderCircle;
 }
 
@@ -129,7 +128,7 @@
 .homepage-title {
    padding: 27px 8px 10px;
    text-align: center;
-   background-color: #f6f6f6;
+   background-color: $gray-background;
 
    h1 {
       margin: 0;
@@ -149,7 +148,7 @@
 /*-- Explore btn --*/
 .explore-wrapper {
    padding: 5px 0 52px;
-   background-color: #f6f6f6;
+   background-color: $gray-background;
 }
 
 .explore__btn a {
@@ -176,6 +175,11 @@
       display: flex;
       flex-wrap: wrap;
    }
+
+   @media (min-width: $extra-large-media) {
+      max-width: 80%;
+      margin: 0 auto;
+   }
 }
 
 .operation__title {
@@ -186,8 +190,8 @@
    margin: 26px 0 26px 10px;
    padding: 12px 0 9px;
    border-radius: 23px;
-   background-color: #f6f6f6;
-   box-shadow: 1px 6px 10px #e5e5e5;
+   background-color: $gray-background;
+   box-shadow: 1px 6px 10px $shadow-gray;
    transition: all 200ms ease;
 
    @media (min-width: $small-media) {
@@ -196,7 +200,7 @@
 
    &:last-child:hover {
       background-color: #f5edff;
-      box-shadow: 1px 6px 10px #e5e5e5;
+      box-shadow: 1px 6px 10px $shadow-gray;
 
       .fa-store {
          color: $purple;
@@ -256,12 +260,17 @@
 /*-- Restaurant block --*/
 .restaurants-list {
    padding: 32px 20px 47px;
-   background-color: #f6f6f6;
+   background-color: $gray-background;
 
    @media (min-width: $small-media) {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+   }
+
+   @media (min-width: $extra-large-media) {
+      max-width: 80%;
+      margin: 0 auto;
    }
 }
 
@@ -273,11 +282,11 @@
 
 /*-- Restaurant card --*/
 .restaurant-card {
-   height: 250px;
+   min-height: 250px;
    margin: 18px 0;
    background-color: #fff;
    border-radius: 17px;
-   box-shadow: 0 6px 8px #e5e5e5;
+   box-shadow: 0 6px 8px $shadow-gray;
 
    @media (min-width: $small-media) {
       width: 49%;
@@ -312,11 +321,11 @@
    position: absolute;
    right: 13px;
    bottom: 134px;
-   padding: 6px 12px 5px;
+   padding: 7px 12px 5px;
    font-size: 14px;
    font-weight: 500;
    color: darken($green, 40%);
-   background-color: #99e2d0;
+   background-color: $green;
 }
 
 .restaurant-card-items {
@@ -325,7 +334,7 @@
    align-items: center;
 
    .fa-heart {
-      margin-top: -8px;
+      margin-top: -10px;
       padding: 20px 25px;
       font-size: 22px;
       -webkit-text-fill-color: white;

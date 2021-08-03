@@ -7,10 +7,5 @@ body {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: "Roboto", sans-serif;
-
-   @media (min-width: $extra-large-media) {
-      max-width: 1500px;
-      margin: 0 auto;
-   }
+   font-family: "Roboto", "Open Sans", sans-serif;
 }

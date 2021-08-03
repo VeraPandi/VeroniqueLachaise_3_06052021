@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 /*-------------------------------------*/
 /*-- Header --*/
 /*-------------------------------------*/
@@ -8,4 +10,12 @@
 
 .header__logo {
    width: 166px;
+
+   @media (min-width: $small-media) {
+      width: 200px;
+   }
+
+   @media (min-width: $large-media) {
+      width: 240px;
+   }
 }
