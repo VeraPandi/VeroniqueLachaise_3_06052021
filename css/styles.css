@@ -250,17 +250,17 @@ body {
    content: "";
    display: block;
    height: 5px;
+   background: -o-linear-gradient(
+      top,
+      rgba(32, 32, 32, 0.24) 0%,
+      rgba(234, 234, 234, 0.9) 100%
+   );
    background: -webkit-gradient(
       linear,
       left top,
       left bottom,
       from(rgba(32, 32, 32, 0.24)),
       to(rgba(234, 234, 234, 0.9))
-   );
-   background: -o-linear-gradient(
-      top,
-      rgba(32, 32, 32, 0.24) 0%,
-      rgba(234, 234, 234, 0.9) 100%
    );
    background: linear-gradient(
       to bottom,

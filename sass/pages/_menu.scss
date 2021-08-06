@@ -23,6 +23,8 @@
 
 /*-- Menu image --*/
 .menu-image {
+   position: relative;
+
    img {
       object-fit: cover;
       height: 266px;
@@ -116,18 +118,19 @@ $anim-duration: 900ms;
 $anim-delay: $anim-duration / 5;
 
 @keyframes cards {
-   0% {
+   0%,
+   25% {
       opacity: 0;
       transform: translateY(17%);
       animation-delay: 100ms;
    }
 
-   25% {
+   50% {
       opacity: 0.5;
       animation-delay: 200ms;
    }
 
-   50% {
+   75% {
       opacity: 1;
       animation-delay: 400ms;
    }

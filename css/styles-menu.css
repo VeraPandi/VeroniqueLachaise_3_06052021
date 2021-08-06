@@ -110,6 +110,9 @@ body {
 /*-- #Main --*/
 /*-------------------------------------*/
 /*-- Menu image --*/
+.menu-image {
+   position: relative;
+}
 .menu-image img {
    -o-object-fit: cover;
    object-fit: cover;
@@ -223,19 +226,20 @@ body {
 
 /*-- Dish card animations --*/
 @-webkit-keyframes cards {
-   0% {
+   0%,
+   25% {
       opacity: 0;
       -webkit-transform: translateY(17%);
       transform: translateY(17%);
       -webkit-animation-delay: 100ms;
       animation-delay: 100ms;
    }
-   25% {
+   50% {
       opacity: 0.5;
       -webkit-animation-delay: 200ms;
       animation-delay: 200ms;
    }
-   50% {
+   75% {
       opacity: 1;
       -webkit-animation-delay: 400ms;
       animation-delay: 400ms;
@@ -247,19 +251,20 @@ body {
    }
 }
 @keyframes cards {
-   0% {
+   0%,
+   25% {
       opacity: 0;
       -webkit-transform: translateY(17%);
       transform: translateY(17%);
       -webkit-animation-delay: 100ms;
       animation-delay: 100ms;
    }
-   25% {
+   50% {
       opacity: 0.5;
       -webkit-animation-delay: 200ms;
       animation-delay: 200ms;
    }
-   50% {
+   75% {
       opacity: 1;
       -webkit-animation-delay: 400ms;
       animation-delay: 400ms;
