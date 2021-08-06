@@ -408,6 +408,10 @@ body {
 .select .fa-check-circle {
    margin: auto 0;
 }
+.select:hover,
+.select:active {
+   height: 100%;
+}
 
 /*-- Order btn --*/
 .order {

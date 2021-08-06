@@ -239,6 +239,11 @@ $anim-delay: $anim-duration / 5;
    .fa-check-circle {
       margin: auto 0;
    }
+
+   &:hover,
+   &:active {
+      height: 100%;
+   }
 }
 
 /*-- Order btn --*/
